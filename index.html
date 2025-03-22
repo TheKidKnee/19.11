@@ -16,6 +16,7 @@
             height: 100vh;
             margin: 0;
             padding: 20px;
+            position: relative;
         }
         .slide {
             display: none;
@@ -46,6 +47,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
         .btn {
             font-size: 1.2em;
@@ -65,6 +67,7 @@
             background-color: #666;
             color: white;
             position: absolute;
+            transition: all 0.3s ease;
         }
         #success-message {
             display: none;
@@ -103,7 +106,7 @@
                 <input type="hidden" name="message" value="Sonam said YES! ❤️">
                 <button type="submit" class="btn yes" onclick="showSuccessMessage()">Yes</button>
             </form>
-            <button class="btn no" onmouseover="moveButton(this)">No</button>
+            <button class="btn no" id="no-btn" onmouseover="moveButton(this)">No</button>
         </div>
         <p id="success-message">Your response has been sent! 🎉</p>
     </div>
@@ -117,10 +120,9 @@
         }
 
         function moveButton(button) {
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 50);
-            button.style.left = `${x}px`;
-            button.style.top = `${y}px`;
+            let x = Math.random() * (window.innerWidth - button.clientWidth);
+            let y = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.transform = `translate(${x}px, ${y}px)`;
         }
 
         function showSuccessMessage() {
