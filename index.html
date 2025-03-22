@@ -133,12 +133,11 @@
 
         function moveButton() {
             let button = document.getElementById("no-btn");
-            let maxX = window.innerWidth * 0.4;
-            let maxY = window.innerHeight * 0.4;
-            let x = Math.random() * maxX - maxX / 2;
-            let y = Math.random() * maxY - maxY / 2;
-            button.style.left = `calc(50% + ${x}px)`;
-            button.style.top = `calc(50% + ${y}px)`;
+            let maxX = window.innerWidth * 0.35;
+            let maxY = window.innerHeight * 0.35;
+            let x = (Math.random() - 0.5) * maxX;
+            let y = (Math.random() - 0.5) * maxY;
+            button.style.transform = `translate(${x}px, ${y}px)`;
         }
 
         function showSuccessMessage() {
@@ -147,3 +146,4 @@
     </script>
 </body>
 </html>
+
