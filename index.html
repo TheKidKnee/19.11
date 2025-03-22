@@ -141,7 +141,15 @@
             button.style.top = `calc(50% + ${y}px)`;
         }
 
+        function resetNoButton() {
+            let button = document.getElementById("no-btn");
+            button.style.left = "50%";
+            button.style.top = "50%";
+            button.style.transform = "translate(-50%, -50%)";
+        }
+
         document.getElementById("no-btn").addEventListener("mouseover", moveButton);
+        document.getElementById("yes-form").addEventListener("submit", resetNoButton);
 
         function showSuccessMessage() {
             document.getElementById("success-message").style.display = "block";
