@@ -72,7 +72,7 @@
             background-color: #666;
             color: white;
             position: absolute;
-            transition: transform 0.2s ease;
+            transition: top 0.2s ease, left 0.2s ease;
         }
         #no-btn {
             position: absolute;
@@ -135,9 +135,10 @@
             let button = document.getElementById("no-btn");
             let maxX = window.innerWidth * 0.4;
             let maxY = window.innerHeight * 0.4;
-            let x = (Math.random() * maxX) - (maxX / 2);
-            let y = (Math.random() * maxY) - (maxY / 2);
-            button.style.transform = `translate(${x}px, ${y}px)`;
+            let x = Math.random() * maxX - maxX / 2;
+            let y = Math.random() * maxY - maxY / 2;
+            button.style.left = `calc(50% + ${x}px)`;
+            button.style.top = `calc(50% + ${y}px)`;
         }
 
         function showSuccessMessage() {
