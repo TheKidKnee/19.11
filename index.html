@@ -69,6 +69,12 @@
             position: absolute;
             transition: all 0.3s ease;
         }
+        #no-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
         #success-message {
             display: none;
             font-size: 1.2em;
@@ -106,7 +112,7 @@
                 <input type="hidden" name="message" value="Sonam said YES! ❤️">
                 <button type="submit" class="btn yes" onclick="showSuccessMessage()">Yes</button>
             </form>
-            <button class="btn no" id="no-btn" onmouseover="moveButton(this)">No</button>
+            <button class="btn no" id="no-btn" onmouseover="moveButton()">No</button>
         </div>
         <p id="success-message">Your response has been sent! 🎉</p>
     </div>
@@ -119,9 +125,10 @@
             document.getElementById(`slide${currentSlide}`).classList.add('active');
         }
 
-        function moveButton(button) {
-            let x = Math.random() * (window.innerWidth - button.clientWidth);
-            let y = Math.random() * (window.innerHeight - button.clientHeight);
+        function moveButton() {
+            let button = document.getElementById("no-btn");
+            let x = Math.random() * (window.innerWidth * 0.4) - (window.innerWidth * 0.2);
+            let y = Math.random() * (window.innerHeight * 0.4) - (window.innerHeight * 0.2);
             button.style.transform = `translate(${x}px, ${y}px)`;
         }
 
