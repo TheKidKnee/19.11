@@ -72,7 +72,7 @@
             background-color: #666;
             color: white;
             position: absolute;
-            transition: all 0.3s ease;
+            transition: transform 0.2s ease;
         }
         #no-btn {
             position: absolute;
@@ -133,8 +133,10 @@
 
         function moveButton() {
             let button = document.getElementById("no-btn");
-            let x = Math.random() * (window.innerWidth * 0.4) - (window.innerWidth * 0.2);
-            let y = Math.random() * (window.innerHeight * 0.4) - (window.innerHeight * 0.2);
+            let maxX = window.innerWidth * 0.4;
+            let maxY = window.innerHeight * 0.4;
+            let x = (Math.random() * maxX) - (maxX / 2);
+            let y = (Math.random() * maxY) - (maxY / 2);
             button.style.transform = `translate(${x}px, ${y}px)`;
         }
 
