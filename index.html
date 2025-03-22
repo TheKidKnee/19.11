@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonam, Will You Be My Girlfriend?</title>
+    <title> Hello there!!</title>
     <style>
         body {
             text-align: center;
@@ -72,6 +72,7 @@
             background-color: #666;
             color: white;
             position: absolute;
+            transition: transform 0.3s ease;
         }
         #success-message {
             display: none;
@@ -110,7 +111,7 @@
                 <input type="hidden" name="message" value="Sonam said YES! ❤️">
                 <button type="submit" class="btn yes" onclick="showSuccessMessage()">Yes</button>
             </form>
-            <button class="btn no" onmouseover="moveButton(this)">No</button>
+            <button class="btn no" onclick="moveButton(this)">No</button>
         </div>
         <p id="success-message">Your response has been sent! 🎉</p>
     </div>
