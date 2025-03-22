@@ -117,7 +117,7 @@
                 <input type="hidden" name="message" value="Sonam said YES! ❤️">
                 <button type="submit" class="btn yes" onclick="showSuccessMessage()">Yes</button>
             </form>
-            <button class="btn no" id="no-btn" onmouseover="moveButton()">No</button>
+            <button class="btn no" id="no-btn">No</button>
         </div>
         <p id="success-message">Your response has been sent! 🎉</p>
     </div>
@@ -133,12 +133,15 @@
 
         function moveButton() {
             let button = document.getElementById("no-btn");
-            let maxX = window.innerWidth * 0.35;
-            let maxY = window.innerHeight * 0.35;
-            let x = (Math.random() - 0.5) * maxX;
-            let y = (Math.random() - 0.5) * maxY;
-            button.style.transform = `translate(${x}px, ${y}px)`;
+            let maxX = window.innerWidth * 0.4;
+            let maxY = window.innerHeight * 0.4;
+            let x = Math.random() * (maxX * 2) - maxX;
+            let y = Math.random() * (maxY * 2) - maxY;
+            button.style.left = `calc(50% + ${x}px)`;
+            button.style.top = `calc(50% + ${y}px)`;
         }
+
+        document.getElementById("no-btn").addEventListener("mouseover", moveButton);
 
         function showSuccessMessage() {
             document.getElementById("success-message").style.display = "block";
@@ -146,4 +149,3 @@
     </script>
 </body>
 </html>
-
